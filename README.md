@@ -1,24 +1,62 @@
-# README
+## Description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Demonstration using [MongoDB Atlas](https://www.mongodb.com/atlas) and [Mongoid](https://github.com/mongodb/mongoid). Mongoid is an ODM (Object-Document Mapper) framework for MongoDB in Ruby, and you can make almost the same method calls as Active Record by using it.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+### Tool versions
 
-* System dependencies
+- ruby 2.7.6
+- bundler 2.3.11
 
-* Configuration
+See `Gemfile` or `Gemfile.lock` for other dependencies.
 
-* Database creation
+### Install
 
-* Database initialization
+Set a path installing gems.
 
-* How to run the test suite
+```
+bundle config --local path vendor/bundle
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Install gems.
 
-* Deployment instructions
+```
+bundle
+```
 
-* ...
+Install libralies.
+
+```
+bin/yarn
+```
+
+### Set environmental variable
+
+Create the `.env` file on this project's root path.
+
+```
+touch .env
+```
+
+And then add an environmental variable like this.
+
+```
+ATLAS_URI='mongodb+srv://<username>:<password>@<yourcluster>.mongodb.net/<databasename>?retryWrites=true&w=majority'
+```
+
+We have already `dotenv` gem installed and been preparing to load environmental variables, so we just need to add this one.
+
+### Start development
+
+Run the rails server.
+
+```
+bin/rails s
+```
+
+Open this url.
+
+```
+http://localhost:3000/posts
+```
